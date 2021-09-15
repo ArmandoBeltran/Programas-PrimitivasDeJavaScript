@@ -1,0 +1,116 @@
+body{
+    background-color: #123423;
+    color: #fff;
+}
+
+header{
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .js{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+header ul li a{
+    text-decoration: none; 
+    padding: 6px 15px; 
+    color: #fff; 
+    border-radius: 20px;
+}
+header ul li a:hover, 
+header ul li a.active
+{
+    background-color: #fff;
+    color: #123423;
+    text-decoration: none;
+}
+
+.formulario{
+    margin-left: 32%;
+    margin-top: 10%;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 550px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(13, 112, 4, 0.753);
+}
+
+.boton{
+    width: 100%;
+}
+
+footer{
+    background-color: #2c2b2b;
+    clear: both;
+}
+
+.info{
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.datos{
+    text-align: justify;
+    padding: 5px;
+    color: #fff;
+}
+
+.iconos{
+    font-size: 300%;
+}
+.iconos i{
+    color: #fff;
+}
+.fab.fa-facebook:hover{
+    color: #1114c2;
+}
+.fab.fa-twitter-square:hover{
+    color: rgb(9, 164, 236);
+}
+.fab.fa-instagram-square:hover{
+    color: #e09407;
+}
+.fab.fa-youtube:hover{
+    color: #970303;
+}
+
+#cajas{
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    justify-content: center;
+    min-height: 30vh;
+}
+
+.res{
+    width: 99%;
+    line-height: 25px;
+    border: solid 2px #8ae274;
+    padding: 10px;
+    margin: 10px;
+}
+
