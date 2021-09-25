@@ -31,9 +31,10 @@
 
     let valoresEdad = localStorage.getItem('valoresEdad'); 
     let edades = valoresEdad.split(','); 
-    if(edades > 0)
+
+    for(let i = 0; i < edades.length; i++)
     {
-        for(let i = 0; i < edades.length; i++)
+        if(edades[i])
         {
             contenido += '<div class="form-group">'+
             '<h3>Edad niño '+(i+1)+': '+edades[i]+'</h3>'+
