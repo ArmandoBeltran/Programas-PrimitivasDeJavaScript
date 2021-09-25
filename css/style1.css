@@ -103,7 +103,11 @@ footer{
     flex-wrap: wrap; 
     align-items: center; 
     justify-content: center;
-    min-height: 30vh;
+    min-height: 23vh;
+}
+
+#espaciado{
+    min-height: 33vh;
 }
 
 .res{

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear cajas</title>
+    <title>Reservación de Restaurantes</title>
 
     <!--Links de bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -31,54 +31,31 @@
         </ul>
     </header>
 
-    <section id="ask" class="text-center">
+    <section id="reservacion" class="text-center">
         <form class="formulario">
-            <h1>¡Crea cajas!</h1>
+            <h1>Reserva tu(s) mesa(s)</h1>
             <div class="form-group">
-                <label>No. Cajas</label>
-                <input type="text" id="numCajas" class="form-control" placeholder="Ingrese el número de cajas que deseé">
-            </div>
-            <div class="form-group">
-                <label>Elija un color</label>
-                <select name="colores" id="colores" class="form-select">
-                    <option value="black">Negro</option>
-                    <option value="white">Blanco</option>
-                    <option value="grey">Gris</option>
-                    <option value="lawngreen">Verde</option>
-                    <option value="red">Rojo</option>
-                    <option value="blue">Azul</option>
-                    <option value="yellow">Amarillo</option>
-                    <option value="purple">Morado</option>
-                    <option value="pink">Rosa</option>
-                    <option value="orange">Naranja</option>
-                    <option value="brown">Café</option>
-                    <option value="aqua">Aqua</option>
-                </select>
-                <label>Elija el tipo de borde</label>
-                <select name="bordes" id="bordes" class="form-select">
-                    <option value="solid">Sólido</option>
-                    <option value="dotted">Punteado</option>
-                    <option value="dashed">Dashed</option>
-                    <option value="double">Doble</option>
-                    <option value="groove">Groove</option>
-                    <option value="ridge">Ridge</option>
-                    <option value="inset">Inset</option>
-                    <option value="outset">Outset</option>
+                <label>No. Mesas</label>
+                <select name="reservMesas" id="reservMesas" class="form-select">
+                    <option value="0">Elija un opción</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
                 </select>
             </div>
-            <div class="form-group">
-                <a class="btn btn-success boton" onClick="crearCajas()">Mostrar Cajas</a>
+            <div id="mesas" class="form-group"></div>
+            <div id="boton" class="form-group">
+                <a class="btn btn-success boton" id="mostrar">Mostrar</a>
             </div>
         </form>
     </section>
 
-    
-
-    <section id="cajas">
+    <section id="espaciado">
         <script src="js/funcionamiento.js"></script>
     </section>
 
-   <footer>
+    <footer>
         <section class="info">
             <section class="datos">
                 <h6>Luis Armando Beltrán Martínez</h6>
@@ -92,6 +69,5 @@
             </figure>
         </section>
    </footer>
-
 </body>
 </html>
