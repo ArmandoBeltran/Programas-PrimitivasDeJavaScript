@@ -1,0 +1,362 @@
+#marcos img{
+    width: 50px;
+    height: 50px;
+}
+
+#imagenes img{
+    width: 100px;
+    height: 100px;
+}
+
+.form{
+    border-top: 3px solid #000;
+    border-left: 3px solid #000;
+}
+
+
+#resultado{
+    position: absolute;
+    display: block;
+    max-width: 300px;
+    max-height: 400px;
+    max-block-size: 400px;
+    width: 100%;
+    height: 100%;
+    top: 25%;
+    left: 11.1%;
+}
+
+#rNombre{
+    position: absolute;
+    max-width: 300px;
+    max-height: 400px;
+    max-block-size: 400px;
+    top: 15%;
+    left: 5%;
+}
+#rTitulo{
+    position: absolute;
+    max-width: 300px;
+    max-height: 400px;
+    max-block-size: 400px;
+    top: 19%;
+    left: 11.1%;
+}
+#rSubtitulo{
+    position: absolute;
+    max-width: 300px;
+    max-height: 400px;
+    max-block-size: 200px;
+    top: 78%;
+    left: 13%;
+}
+#rMensaje{
+    position: absolute;
+    max-width: 300px;
+    max-height: 400px;
+    max-block-size: 80px;
+    top: 87%;
+    left: 11%;
+    text-align: center;
+}
+
+
+@media (max-width: 1280px)
+{
+    #resultado{
+        max-width: 250px;
+        max-height: 300px;
+        top: 10%;
+        left: 8.5%;
+    }
+    #rNombre{
+        max-width: 250px;
+        max-height: 300px;
+        max-block-size: 200px;
+        top: 6%;
+        left: 5%;
+    }
+    #rTitulo{
+        position: absolute;
+        max-width: 600px;
+        max-height: 800px;
+        max-block-size: 800px;
+        top: 7%;
+        left: 8.5%;
+    }
+    #rSubtitulo{
+        position: absolute;
+        max-width: 300px;
+        max-height: 400px;
+        max-block-size: 200px;
+        top: 32%;
+        left: 19%;
+    }
+    #rMensaje{
+        position: absolute;
+        max-width: 300px;
+        max-height: 400px;
+        max-block-size: 800px;
+        top: 35%;
+        left: 9%;
+        text-align: center;
+    }
+    @media (max-height: 600px)
+    {
+        #resultado{
+            max-width: 200px;
+            max-height: 250px;
+            top: 20%;
+            left: 11%;
+        }
+    }
+}
+
+@media (max-width: 900px)
+{
+    #resultado{
+        max-width: 100px;
+        max-height: 150px;
+        top: 15%;
+        left: 13%;
+    }
+}
+
+@media (max-width: 800px)
+{
+    #rNombre{
+        max-width: 250px;
+        max-height: 300px;
+        max-block-size: 200px;
+        top: 6.5%;
+        left: 5%;
+    }
+    #rTitulo{
+        position: absolute;
+        max-width: 600px;
+        max-height: 800px;
+        max-block-size: 800px;
+        top: 11.5%;
+        left: 13%;
+    }
+    #rSubtitulo{
+        position: absolute;
+        max-width: 50;
+        max-height: 100px;
+        max-block-size: 50px;
+        top: 29%;
+        left: 17%;
+    }
+    #rMensaje{
+        position: absolute;
+        max-width: 300px;
+        max-height: 400px;
+        max-block-size: 600px;
+        top: 35%;
+        left: 7%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px)
+{
+    #resultado{
+        max-width: 175px;
+        max-height: 225px;
+        left: 28%;
+    }
+
+}
+
+@media (max-width: 550px)
+{
+    #resultado{
+        max-width: 250px;
+        max-height: 300px;
+        top: 20%;
+        left: 27%;
+
+    }
+    #rNombre{
+        max-width: 250px;
+        max-height: 300px;
+        max-block-size: 200px;
+        top: 11%;
+        left: 11%;
+    }
+    #rTitulo{
+        position: absolute;
+        max-width: 600px;
+        max-height: 800px;
+        max-block-size: 800px;
+        top: 14%;
+        left: 27%;
+    }
+    #rSubtitulo{
+        position: absolute;
+        max-width: 300px;
+        max-height: 400px;
+        max-block-size: 200px;
+        top: 63%;
+        left: 45%;
+    }
+    #rMensaje{
+        position: absolute;
+        max-width: 300px;
+        max-height: 400px;
+        max-block-size: 800px;
+        top: 70%;
+        left: 20%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 420px)
+{
+    #resultado{
+        max-width: 250px;
+        max-height: 300px;
+        top: 20%;
+        left: 22%;
+
+    }
+    #rNombre{
+        max-width: 250px;
+        max-height: 300px;
+        max-block-size: 200px;
+        top: 10%;
+        left: 11%;
+    }
+    #rTitulo{
+        position: absolute;
+        max-width: 600px;
+        max-height: 800px;
+        max-block-size: 800px;
+        top: 14%;
+        left: 22%;
+    }
+    #rSubtitulo{
+        position: absolute;
+        max-width: 300px;
+        max-height: 400px;
+        max-block-size: 200px;
+        top: 60%;
+        left: 45%;
+    }
+    #rMensaje{
+        position: absolute;
+        max-width: 300px;
+        max-height: 400px;
+        max-block-size: 800px;
+        top: 65%;
+        left: 20%;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 380px)
+{
+    #resultado{
+        max-width: 150px;
+        max-height: 200px;
+        left: 30%;
+    }
+    #rNombre{
+        max-width: 150px;
+        max-height: 200px;
+        max-block-size: 200px;
+        top: 10%;
+        left: 13%;
+    }
+    #rTitulo{
+        position: absolute;
+        max-width: 600px;
+        max-height: 800px;
+        max-block-size: 800px;
+        top: 14%;
+        left: 30%;
+    }
+    #rSubtitulo{
+        position: absolute;
+        max-width: 300px;
+        max-height: 400px;
+        max-block-size: 200px;
+        top: 50%;
+        left: 45%;
+    }
+    #rMensaje{
+        position: absolute;
+        max-width: 300px;
+        max-height: 400px;
+        max-block-size: 800px;
+        top: 54%;
+        left: 30%;
+        text-align: center;
+    }
+    @media (max-width: 360px)
+    {
+        #resultado{
+            max-width: 150px;
+            max-height: 200px;
+            left: 30%;
+        }
+        #rNombre{
+            max-width: 150px;
+            max-height: 200px;
+            max-block-size: 200px;
+            top: 10%;
+            left: 13%;
+        }
+        #rTitulo{
+            position: absolute;
+            max-width: 600px;
+            max-height: 800px;
+            max-block-size: 800px;
+            top: 14%;
+            left: 25%;
+        }
+        #rSubtitulo{
+            position: absolute;
+            max-width: 300px;
+            max-height: 400px;
+            max-block-size: 200px;
+            top: 50%;
+            left: 15%;
+        }
+        #rMensaje{
+            position: absolute;
+            max-width: 300px;
+            max-height: 400px;
+            max-block-size: 800px;
+            top: 58%;
+            left: 11%;
+            text-align: center;
+        }
+    }
+
+}
+
+@media (max-width: 300px)
+{
+    #resultado{
+        max-width: 100px;
+        max-height: 150px;
+        top: 13%;
+    }
+}
+
+
+
+header .js{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+body{
+    background-color: #123423;
+    color: #fff;
+}
