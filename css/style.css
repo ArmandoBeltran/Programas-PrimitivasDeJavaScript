@@ -3,6 +3,22 @@ body{
     background-size: cover;
 }
 
+#actividades{
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+header .js{
+    color: rgb(184, 184, 184);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
 
 h1{
     font-size: 30px;
@@ -30,7 +46,7 @@ button{
 }
 #imagen img{
     width: 100px;
-    height: 120px;
+    height: 100px;
 }
 
 .contenedor{
@@ -52,4 +68,44 @@ button{
 .name a:hover{
     text-decoration: underline;
 
+}
+
+footer{
+    background-color: #2c2b2b;
+    clear: both;
+}
+
+.info{
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.datos{
+    text-align: justify;
+    padding: 5px;
+    color: #fff;
+}
+
+.iconos{
+    font-size: 300%;
+}
+.iconos i{
+    color: #fff;
+}
+.fab.fa-facebook:hover{
+    color: #1114c2;
+}
+.fab.fa-twitter-square:hover{
+    color: rgb(9, 164, 236);
+}
+.fab.fa-instagram-square:hover{
+    color: #e09407;
+}
+.fab.fa-youtube:hover{
+    color: #970303;
+}
+.fab.fa-github:hover{
+    color: #868585;
 }

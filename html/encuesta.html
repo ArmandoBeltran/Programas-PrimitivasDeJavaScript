@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/105eae53a8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/encuesta.css">
+    <link rel="icon" href="../img/vue.png">
+    
+</head>
+<body>
+    <header class="container-fluid text-center">
+        <h1><a href="../index.html" class="js">Vue JS</a></h1>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../html/programa1.html">Programa 1</a></li>
+            <li><a href="../html/programa2.html">Programa 2</a></li>
+            <li><a href="../html/programaMesas.html">Programa Reservación</a></li>
+            <li><a href="../html/tarjeta.html">Tarjeta de Felicitación</a></li>
+            <li><a href="../html/encuesta.html">Encuesta</a></li>
+        </ul>
+    </header>
+    
+    <section class="formulario" id="survey">
+        <h1>Encuesta</h1>
+            <div class="form-group">
+                <h4>¿Te gusta programar?</h4>
+                <label>SI </label> <input type="radio" v-model="fAnswer" value="si">
+                <label>NO </label> <input type="radio" v-model="fAnswer" value="no">
+            </div>
+            <div v-if="fAnswer === 'si'">
+                <div class="form-group">
+                    <h4>¿Cuánto tiempo llevas programando?</h4>
+                    <input type="number" class="form-control" v-model="timeCoding">
+                </div>
+                <div class="form-group" v-if="timeCoding < 2">
+                    <h4>¿Qué te motiva a programar?</h4>
+                    <textarea cols="30" rows="10" class="form-control" v-model="motivation"></textarea>
+                </div>
+                <div class="form-group" v-else>
+                    <h4>Cuéntanos tu experiencia programando</h4>
+                    <textarea cols="30" rows="10" class="form-control" v-model="experience"></textarea>
+                </div>
+                <div class="form-group">
+                    <h4>¿Qué lenguajes de programación conoce?</h4>
+                    <input type="text" v-model="codingLanguage" class="lang" @keyup.enter="add()">
+                    <button class="btn btn-success" @click="add()">Agregar lenguaje</button>
+                    <label>El listado se mostrará en el resumen de la encuesta. N° de Lenguajes agregados: {{nLanguages}}</label>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success" @click="confirm()">Confirmar</button>
+                </div>
+            </div>
+            <div v-else>
+                <h2>Gracias por apoyarnos</h2>
+            </div>
+            <div class="form-group" v-if="showSummary == true">
+                <h4>¿Le gusta programar?: </h4><p>{{fAnswer}}</p>
+                <h4>¿Cuánto tiempo lleva programando?: </h4><p>{{timeCoding}} años</p>
+                <div class="form-group" v-if="timecoding < 2">
+                    <h4>¿Qué te motiva a programar? </h4><p>{{motivation}}</p>
+                </div>
+                <div class="form-group" v-else>
+                    <h4>Tu experiencia programando: </h4><p>{{experience}}</p>
+                </div>
+                <h4>Lenguajes de programación que conoce: </h4>
+                <ul>
+                    <li v-for="(codeLang, index) in codingLanguages" :key="">{{codeLang}}</li>
+                </ul>
+            </div>
+    </section>
+
+      
+
+    <footer>
+        <section class="info">
+            <section class="datos">
+                <h6>Luis Armando Beltrán Martínez</h6>
+                <h6>beltran.armando2210@gmail.com</h6>
+                <h6>EVN401</h6>
+            </section>
+            <figure class="iconos">
+                <a href="https://twitter.com/armanxddo" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.instagram.com/armanxddo.mf/?hl=es" target="_blank"><i class="fab fa-instagram-square"></i></a>
+                <a href="https://www.youtube.com/channel/UCc3S5wgp4aQM50skPEcYQ2w" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/ArmandoBeltran"><i class="fab fa-github"></i></a>
+            </figure>
+        </section>
+   </footer>
+
+   <script src="../js/encuesta.js"></script>    
+</body>
+</html>
