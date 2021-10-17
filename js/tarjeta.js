@@ -5,7 +5,7 @@ var tematicas = function (tematica)
         case 'a': 
             for(let i = 1; i <= 3; i++)
             {
-                document.getElementById("imagen"+i).src = "img/navidad"+i+".jpg";
+                document.getElementById("imagen"+i).src = "../img/navidad"+i+".jpg";
             }
             document.getElementById("tipoFont").innerHTML = '<option value="Brush Script MT, Brush Script Std, cursive">Brush Script MT, Brush Script Std, cursive</option>'+
             '<option value="Snell Roundhand, cursive">Snell Roundhand, cursive</option>'+
@@ -18,7 +18,7 @@ var tematicas = function (tematica)
         case 'b': 
         for(let i = 1; i <= 3; i++)
             {
-                document.getElementById("imagen"+i).src = "img/independencia"+i+".jpg";
+                document.getElementById("imagen"+i).src = "../img/independencia"+i+".jpg";
             }
             document.getElementById("tipoFont").innerHTML = '<option value="Georgia, serif">Georgia, serif</option>'+
             '<option value="Bookman, URW Bookman L, serif">Bookman, URW Bookman L, serif</option>'+
@@ -31,7 +31,7 @@ var tematicas = function (tematica)
         case 'c':
             for(let i = 1; i <= 3; i++)
             {
-                document.getElementById("imagen"+i).src = "img/programador"+i+".jpg";
+                document.getElementById("imagen"+i).src = "../img/programador"+i+".jpg";
             }
             document.getElementById("tipoFont").innerHTML = '<option value="Courier New, monospace">Courier New, monospace</option>'+
             '<option value="FreeMono, monospace">FreeMono, monospace</option>'+
