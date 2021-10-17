@@ -53,7 +53,7 @@ var colorFondo = function ()
 
 var marcos = function (marco)
 {
-    document.getElementById("colorFondo").src = "img/"+marco+".png"; 
+    document.getElementById("colorFondo").src = "../img/"+marco+".png"; 
 }
 
 var imagenes = function (numImagen)
