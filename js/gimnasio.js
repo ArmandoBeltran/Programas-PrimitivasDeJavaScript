@@ -17,8 +17,9 @@ const gim = new Vue
                 productQuantity: 2,
                 singlePrice: 349, 
                 totalPrice: 0,
-            }
+            },
         ],
+        numProducts: 2,
     }, 
     methods: {
         add: function ()
@@ -28,7 +29,8 @@ const gim = new Vue
                 this.products.push({productName: this.newProductName, productQuantity: this.newProductQuantity, singlePrice: this.newProductPrice, totalPrice: this.totalPrice}); 
                 this.newProductName = '';
                 this.newProductQuantity = 0;
-                this.newProductPrice = 0;     
+                this.newProductPrice = 0;
+                this.numProducts++;      
             }
         }, 
         recalculate: function ()
@@ -73,9 +75,13 @@ const gim = new Vue
         },
         total: function ()
         {
-            total = this.subtotal + this.iva; 
+            var total = this.subtotal + this.iva; 
             total = parseFloat(total).toFixed(2); 
             return total; 
+        }, 
+        numProducts: function ()
+        {
+
         }
     }
 });

@@ -54,7 +54,7 @@
 
         <div class="m-lg-4">
            <fieldset>
-               <legend>Productos</legend>
+               <legend>Productos {{numProducts}}</legend>
                 <table class="table">
                     <tbody>
                         <tr v-for="product in products" :class="{zero: product.totalPrice==0}">
