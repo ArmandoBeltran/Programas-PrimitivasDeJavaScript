@@ -1,0 +1,81 @@
+const gim = new Vue 
+({
+    el: '#stock', 
+    data: {
+        newProductName: '',
+        newProductQuantity: 0,
+        newProductPrice: 0,
+        products: [
+            {
+                productName: 'Proteina Muscletech', 
+                productQuantity: 5,
+                singlePrice: 869, 
+                totalPrice: this.productQuantity*this.singlePrice,
+            },
+            {
+                productName: 'Burst BodyPerformance', 
+                productQuantity: 2,
+                singlePrice: 349, 
+                totalPrice: 0,
+            }
+        ],
+    }, 
+    methods: {
+        add: function ()
+        {
+            if (this.newProductName && this.newProductQuantity && this.newProductPrice)
+            {
+                this.products.push({productName: this.newProductName, productQuantity: this.newProductQuantity, singlePrice: this.newProductPrice, totalPrice: this.totalPrice}); 
+                this.newProductName = '';
+                this.newProductQuantity = 0;
+                this.newProductPrice = 0;     
+            }
+        }, 
+        recalculate: function ()
+        {
+            for (product of this.products)
+            {
+                product.totalPrice = product.productQuantity * product.singlePrice; 
+            }
+        }, 
+    },
+    beforeMount()
+    {
+        for (product of this.products)
+        {
+            product.totalPrice = product.productQuantity * product.singlePrice; 
+        }
+    },
+    computed: {
+        totalPrice: function()
+        {
+            return this.newProductQuantity*this.newProductPrice; 
+        },
+        subtotal: function ()
+        {
+            var subtotal = 0; 
+            for (product of this.products)
+            { 
+                subtotal += product.totalPrice;
+            }
+            subtotal = subtotal.toFixed(); 
+            return parseFloat(subtotal); 
+        },
+        iva: function ()
+        {
+            var iva = 0; 
+            for (product of this.products)
+            {
+                iva += (product.totalPrice * 0.16); 
+            }
+            iva = iva.toFixed(2)
+            return parseFloat(iva); 
+        },
+        total: function ()
+        {
+            total = this.subtotal + this.iva; 
+            total = parseFloat(total).toFixed(2); 
+            return total; 
+        }
+    }
+});

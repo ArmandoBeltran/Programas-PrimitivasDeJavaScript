@@ -1,0 +1,36 @@
+*{
+    color: #fff;
+}
+
+.formulario{
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(13, 112, 4, 0.753);
+}
+
+.row{
+    margin: 0;
+}
+
+.q{
+    width: 30%;
+    max-width: 100px;
+}
+
+.b{
+    max-width: 38px;
+    width: 100%;
+}
+
+
+.zero{
+    transition: linear all 0.3s;
+    background-color: rgb(128, 49, 49);
+}
+.font{
+    font-size: 50px;
+}
