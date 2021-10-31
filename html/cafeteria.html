@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubic World</title>
+    <!--Links de bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/105eae53a8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1"/>
+
+    <link rel="stylesheet" type="text/css" href="../css/cafeteria.css">
+    <link rel="icon" href="../img/js.png">
+</head>
+<body>
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <div class="navbar-header brand">
+                <a href="#" class="navbar-brand js"><i class="fas fa-mug-hot"></i> CUBIC WORLD</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Mimenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="Mimenu">
+                <ul class="navbar-nav justify-content-end ml-auto espacio">
+                    <li class="nav-item nav-link fontMenu"><a href="#">Inicio</a></li>
+                    <li class="nav-item nav-link fontMenu"><a href="#">Mi cuenta</a></li>
+                    <li class="nav-item nav-link fontMenu"><a href="#">Contáctanos</a></li>
+                    <li class="nav-item nav-link fontMenu"><a href="#">Mi carrito</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="banner">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="textoBanner">
+                <h1>Somos amantes del café</h1>
+                <p>Cubic World, tu cafetería retro favorita &#10084;</p>
+            </div>
+        </div>
+        
+    </section>
+
+    <section id="main">
+        <div class="row">
+            <div class="col-3">
+                <section id="wishlist">
+                    <article class="card-left wislist">
+                        <h1 class="text-center">Wishlist</h1>
+                        <ul>
+                            <li v-for="drink in wishlist"><transition name="aparecer" appear><img :src="drink.img" class="img-wishlist" v-if="appear"></transition> {{drink.name}} - ${{drink.price}}</li>
+                            <hr>
+                            <li>Productos: {{count}} - Total: ${{total}}</li>
+                        </ul>
+                    </article>
+                </section>
+            </div>
+        
+            <div class="col-9">
+                <section id="content">
+                    <div class="row">
+                        <div class="col-12">
+                            <article class="card-left text-center search">
+                                <form>
+                                    <h1>Buscar por: </h1>
+                                    <div class="form-group row">  
+                                       <div class="col-6">
+                                            Nombre del producto <input type="text" class="form-control input-card" v-model="toSearch" @keyup="validateSearchText()">
+                                        </div>
+                                       <div class="col-6">
+                                            Un precio máximo <input type="number" class="form-control input-card" v-model="maximum">
+                                            <br>
+                                        </div>
+                                    </div>
+                                </form>
+                            </article>
+                            <h1>Te ofrecemos...</h1>
+                            <article class="card-products products">
+                                <div class="card" v-for="drink in searchProduct" :class="notAvailableCard(drink.isAvailable)">
+                                    <transition name="aparecer" appear>
+                                        <img v-bind:src="drink.img" alt="Imagen de card" class="card-img-top" :class="notAvailableData(drink.isAvailable)">
+                                    </transition>
+                                    <div class="card-body" :class="notAvailableData(drink.isAvailable)">
+                                        <h5 class="card-title">{{drink.name}} <h6 v-if="drink.isAvailable == false" class="not">No disponible</h6></h5>
+                                        <p class="card-text" v-if="isSearching==false"><strong>Tamaño:</strong> {{drink.size}}</p>
+                                        <p class="card-text" v-if="isSearching==false"><strong>Ingredientes:</strong> {{drink.ingredients}}</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="btn btn-danger btn-card" @click="addWishlist(drink.name); appear()"><i class="far fa-heart"></i></button>
+                                        <span>${{drink.price}}</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+        
+        </div>
+    </section>
+    
+
+   <footer>
+        <section class="info">
+            <section class="datos">
+                <h6>Luis Armando Beltrán Martínez</h6>
+                <h6>beltran.armando2210@gmail.com</h6>
+                <h6>EVN401</h6>
+            </section>
+            <figure class="iconos">
+                <a href="https://twitter.com/armanxddo" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.instagram.com/armanxddo.mf/?hl=es" target="_blank"><i class="fab fa-instagram-square"></i></a>
+                <a href="https://www.youtube.com/channel/UCc3S5wgp4aQM50skPEcYQ2w" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/ArmandoBeltran"><i class="fab fa-github"></i></a>
+            </figure>
+            <p>Imagen de <a href="https://pixabay.com/es/users/pixel2013-2364555/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4343663">S. Hermann &amp; F. Richter</a> en <a href="https://pixabay.com/es/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4343663">Pixabay</a></p>
+        </section>
+    </footer>
+
+    <script src="../js/cafeteria.js"></script>   
+</body>
+</html>

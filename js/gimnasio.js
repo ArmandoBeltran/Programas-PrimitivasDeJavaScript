@@ -10,7 +10,7 @@ const gim = new Vue
                 productName: 'Proteina Muscletech', 
                 productQuantity: 5,
                 singlePrice: 869, 
-                totalPrice: this.productQuantity*this.singlePrice,
+                totalPrice: 0,
             },
             {
                 productName: 'Burst BodyPerformance', 
@@ -41,7 +41,7 @@ const gim = new Vue
             }
         }, 
     },
-    beforeMount()
+    beforeMount() 
     {
         for (product of this.products)
         {
@@ -60,7 +60,7 @@ const gim = new Vue
             { 
                 subtotal += product.totalPrice;
             }
-            subtotal = subtotal.toFixed(); 
+            subtotal = subtotal.toFixed(2); 
             return parseFloat(subtotal); 
         },
         iva: function ()
@@ -79,9 +79,5 @@ const gim = new Vue
             total = parseFloat(total).toFixed(2); 
             return total; 
         }, 
-        numProducts: function ()
-        {
-
-        }
     }
 });
