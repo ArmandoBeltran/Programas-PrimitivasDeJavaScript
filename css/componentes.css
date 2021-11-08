@@ -1,0 +1,137 @@
+header{
+    background-color: brown;
+}
+
+header ul li{
+    list-style: none;
+    color: #fff;
+}
+
+header ul li a{
+    text-decoration: none; 
+    padding: 6px 15px; 
+    color: #fff; 
+    border-radius: 20px;
+}
+
+header ul li a:hover, 
+header ul li a.active
+{
+    background-color: #fff;
+    color: #123423;
+    text-decoration: none;
+}
+
+.form {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.753);
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#form label, h1 {
+    color: black;
+}
+
+.row {
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+footer{
+    background-color: #2c2b2b;
+    clear: both;
+}
+
+.info{
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.datos{
+    text-align: justify;
+    padding: 5px;
+    color: #fff;
+}
+
+.iconos{
+    font-size: 300%;
+}
+.iconos i{
+    color: #fff;
+}
+.fab.fa-facebook:hover{
+    color: #1114c2;
+}
+.fab.fa-twitter-square:hover{
+    color: rgb(9, 164, 236);
+}
+.fab.fa-instagram-square:hover{
+    color: #e09407;
+}
+.fab.fa-youtube:hover{
+    color: #970303;
+}
+.fab.fa-github:hover{
+    color: #868585;
+}
+
+.card{
+    width: 300px;
+    border-radius: 15px;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 1px 1px 2px gray;
+    position: absolute;
+    left: 78%;
+    top: 60%;
+    color: #fff;
+}
+
+.card--success {
+    background-color: rgb(81, 145, 89);
+}
+
+.card--unsuccess {
+    background-color: rgb(145, 81, 81);
+}
+
+.card-header, .card-body, .card-footer {
+    border-color: #2c2b2b;
+}
+
+.card-header {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-left: 0.1%;
+}
+
+
+form button {
+    width: 100%;
+}
+
+.right-left-enter-active {
+    transition: all .5s ease;
+}
+
+.right-left-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.right-left-enter, .right-left-leave {
+    transform: translateX(10px);
+    opacity: 0;
+}

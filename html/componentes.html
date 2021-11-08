@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Componentes</title>
+
+     <!--Links de bootstrap-->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/105eae53a8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1"/>
+
+
+    <link rel="icon" href="../img/vue.png">
+    <link rel="stylesheet" href="../css/componentes.css">
+</head>
+<body>
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <div class="navbar-header brand">
+                <a href="#" class="navbar-brand js"><i class="fas fa-puzzle-piece"></i> Componentes, Slot y Slot Scope</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Mimenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="Mimenu">
+                <ul class="navbar-nav justify-content-end ml-auto espacio">
+                    <li class="nav-item nav-link fontMenu"><a href="../index.html">Inicio</a></li>
+                    <li class="nav-item nav-link fontMenu"><a href="../html/encuesta.html">Encuesta</a></li>
+                    <li class="nav-item nav-link fontMenu"><a href="../html/gimnasio.html">Gimnasio</a></li>
+                    <li class="nav-item nav-link fontMenu"><a href="../html/cafeteria.html">Cafeteria</a></li>
+                    <li class="nav-item nav-link fontMenu"><a href="../html/componentes.html">Componentes</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="form">
+        <div class="row">
+            <article class="col-6 offset-4 form">
+                <form @submit.prevent="dataConfirmation()">
+                    <h1>Ingrese sus datos</h1>
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control" v-model="name">
+                    </div>
+                    <div class="form-group">
+                        <label>Edad</label>
+                        <input type="text" class="form-control" v-model="age">
+                    </div>
+                    <div class="form-group">
+                        <label>Correo electrónico</label>
+                        <input type="email" class="form-control" placeholder="example@example.com" v-model="email">
+                    </div>
+                    <div class="form-group">
+                        <label>Descripción</label> <br>
+                        <textarea cols="30" rows="5" class="form-control" v-model="description" placeholder="50 o más carácteres"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success">Confirmar</button>
+                    </div>
+                </form>
+            </article>
+        </div>
+        <transition name="right-left" appear>
+            <information @hide="isSuccessful = !isSuccessful" v-if="isSuccessful" type="card--success" result="Proceso realizado">
+                <template slot="header-message" slot-scope="data">
+                    {{data.type}}
+                </template>
+                <template slot="body-message">
+                    Los datos se han recibido éxitosamente.
+                </template>
+                <template slot="footer-message">
+                    Por favor espere nuestro correo de confirmación.
+                </template>
+            </information>
+        </transition>
+
+        <transition name="right-left">
+            <information @hide="isUnsuccessful = !isUnsuccessful" v-if="isUnsuccessful" type="card--unsuccess" result="Fallo en el proceso">
+                <template slot="header-message" slot-scope="data">
+                    {{data.type}}
+                </template>
+                <template slot="body-message">
+                    No se ha podido realizar el proceso.
+                </template>
+                <template slot="footer-message">
+                    Llene todos los datos o revise los que ha insertado.
+                </template>
+            </information>
+        </transition>
+    </section>
+
+    <footer>
+        <section class="info">
+            <section class="datos">
+                <h6>Luis Armando Beltrán Martínez</h6>
+                <h6>beltran.armando2210@gmail.com</h6>
+                <h6>EVN401</h6>
+            </section>
+            <figure class="iconos">
+                <a href="https://twitter.com/armanxddo" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.instagram.com/armanxddo.mf/?hl=es" target="_blank"><i class="fab fa-instagram-square"></i></a>
+                <a href="https://www.youtube.com/channel/UCc3S5wgp4aQM50skPEcYQ2w" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/ArmandoBeltran"><i class="fab fa-github"></i></a>
+            </figure>
+        </section>
+   </footer>
+
+   
+
+   <template id="message">
+        <article class="card" :class="[type]">
+            <div class="card-header">
+                <button class="btn btn-danger" @click="showOrNotInfo()">X</button>
+                <slot name="header-message" :type="card">
+                    Aquí el encabezado del mensaje
+                </slot>
+            </div>
+            <div class="card-body">
+                <slot name="body-message">
+                    Aquí el cuerpo del mensaje
+                </slot>
+            </div>
+            <div class="card-footer">
+                <slot name="footer-message">
+                    Aquí el pie del mensaje
+                </slot>
+            </div>
+        </article>
+   </template>
+
+   <script src="../js/componentes.js"></script>
+</body>
+</html>
